@@ -69,7 +69,7 @@ import java.io.Serializable
     }
     fun main() {
         val f =
-            DataInputStream(FileInputStream("/home/INFORMATICA/alu10186575/AndroidStudioProjects/T3Ex/app/src/main/java/com/example/t3ex/Rutes.dat"))
+            DataInputStream(FileInputStream("src/main/resources/Rutes.dat"))
         var rutas = ArrayList<Ruta>()
         while (f.available() > 0) {
             val nom = f.readUTF()
@@ -90,7 +90,7 @@ import java.io.Serializable
             rutas.add(ruta)
         }
         f.close()
-        val f_obj = ObjectOutputStream(FileOutputStream("src/Rutas.obj"))
+        val f_obj = ObjectOutputStream(FileOutputStream("src/main/resources/Rutas.obj"))
         for (i in rutas.indices) {
             rutas[i].mostrarRuta()
         }
